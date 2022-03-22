@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &97150526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 97150528}
+  - component: {fileID: 97150527}
+  m_Layer: 0
+  m_Name: GameEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &97150527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97150526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06862657b9df33e44b6251e2c4d99b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinC: 0
+  enemy: {fileID: 5355119142821202437, guid: 690890178daa8e04989c8434cb694af2, type: 3}
+  enemyManager: {fileID: 742803954987891887}
+--- !u!4 &97150528
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97150526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.3800001, y: 0.6799998, z: -11.049999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &238720077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1171,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1142361740087450345, guid: 9e140986a898f654eb7983e2a2a56e4b, type: 3}
   m_PrefabInstance: {fileID: 1456572948}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1529426381 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5355119142821202437, guid: 690890178daa8e04989c8434cb694af2, type: 3}
+  m_PrefabInstance: {fileID: 742803954987891885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1575826531
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1401,17 +1453,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1382192837}
     m_Modifications:
+    - target: {fileID: 2281834746908709528, guid: 690890178daa8e04989c8434cb694af2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cc6fe2c04de8d8047953658c1d0b2323, type: 2}
     - target: {fileID: 3337167207182618119, guid: 690890178daa8e04989c8434cb694af2, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3337167207182618119, guid: 690890178daa8e04989c8434cb694af2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.66
+      value: -12.07
       objectReference: {fileID: 0}
     - target: {fileID: 3337167207182618119, guid: 690890178daa8e04989c8434cb694af2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 13.82
       objectReference: {fileID: 0}
     - target: {fileID: 3337167207182618119, guid: 690890178daa8e04989c8434cb694af2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1456,6 +1512,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3337167207182618119, guid: 690890178daa8e04989c8434cb694af2, type: 3}
   m_PrefabInstance: {fileID: 742803954987891885}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &742803954987891887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529426381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323375fac7cb7414493a7bc5d634e3ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  coins: 3
+  waypoints:
+  - {fileID: 1575826532}
+  - {fileID: 7259427372558449676}
+  - {fileID: 471403824}
+  - {fileID: 1671410325}
+  - {fileID: 389044682}
+  - {fileID: 1307310923}
+  - {fileID: 891898387}
+  - {fileID: 730593802}
+  - {fileID: 1456572949}
+  - {fileID: 1410926509}
+  - {fileID: 890764546}
+  - {fileID: 1195138148}
+  - {fileID: 1317605006}
+  - {fileID: 2062775197}
+  - {fileID: 546986102}
+  - {fileID: 948320073}
+  targetWPIndex: 0
 --- !u!1001 &7259427372558449675
 PrefabInstance:
   m_ObjectHideFlags: 0
