@@ -6,9 +6,14 @@ public class EnemyDemo : MonoBehaviour
     // todo #1 set up properties
     //   health, speed, coin worth
 
-    private int health = 3;
-    public float speed = 3f;
-    public int coins = 3;
+    private int health = 100;
+    public float speed = .25f;
+    public int coins = 0;
+    public bool enemyD;
+
+    //this will be part of the health bar
+    public Transform healthBar;
+    public float healthPU;
 
     //   waypoints
 
@@ -22,6 +27,7 @@ public class EnemyDemo : MonoBehaviour
 
     public event EnemyDied OnEnemyDied;
 
+
     // NOTE! This code should work for any speed value (large or small)
 
     //-----------------------------------------------------------------------------
@@ -32,6 +38,11 @@ public class EnemyDemo : MonoBehaviour
 
         transform.position = waypoints[0].position;
         targetWPIndex++;
+
+        //-----------------------------------
+        // new code sections
+        // get the percentage of health starting from the begining
+        healthPU = 100f / health;
     }
 
     //-----------------------------------------------------------------------------
@@ -71,10 +82,10 @@ public class EnemyDemo : MonoBehaviour
 
 
 
-        bool enemyD = false;
+        enemyD = false;
         if (enemyD)
         {
-            OnEnemyDied?.Invoke(this);
+           // OnEnemyDied?.Invoke(this);
         }
 
         //Increment to the end of the list 
@@ -88,7 +99,26 @@ public class EnemyDemo : MonoBehaviour
         targetWPIndex++;
     }
 
+    public void DamageHealthCal()
+    {
+        //Debug.Log("Health for Enemy:" + health);
 
+        health -= 25;
+        if (health <= 0)
+        {
+
+
+            Debug.Log($"{transform.name} is Dead");
+            Destroy(this.gameObject);
+            
+           
+        }
+
+        float percentage = healthPU * health;
+        Vector3 newHA = new Vector3(percentage / 100f, healthBar.localScale.y, healthBar.localScale.z);
+        healthBar.localScale = newHA;
+
+    }
 
     
 }
